@@ -98,5 +98,7 @@ public class HomeViewTest {
           tanField.setText("a1234567"); // invalid input: should start with T/t.    
           Assert.assertFalse(homeView.validateTextField(tanField).length() == 0);
       }
+    
+    //TODO: add a new test case.
       
     }
