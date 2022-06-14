@@ -44,7 +44,7 @@ public class HomeViewTest {
       public void validateTextFieldTest() {
           JTextField tanField = new JTextField(Settings.FIELD_LENGTH);
           tanField.setName("TAN");
-          tanField.setText("T1234567");       
+          tanField.setText("T12345678");       
 
           JTextField provinceField = new JTextField(Settings.FIELD_LENGTH);
           provinceField.setName("Province");
@@ -91,14 +91,33 @@ public class HomeViewTest {
           Assert.assertTrue("Please enter a positive integer for PI.".equals(homeView.validateTextField(piField)));
       }
       
-      @Test(enabled=true) 
+      @Test(enabled=false) 
       public void myAssertFalseTest() {
           JTextField tanField = new JTextField(Settings.FIELD_LENGTH);
           tanField.setName("TAN");
           tanField.setText("a1234567"); // invalid input: should start with T/t.    
-          Assert.assertFalse(homeView.validateTextField(tanField).length() == 0);
+          Assert.assertFalse(homeView.validateTextField(tanField).length() == 0);//this is designed to fail.
       }
     
-    //TODO: add a new test case.
+      @Test(enabled=true)
+      public void testTanField() {
+    	  JTextField tanField = new JTextField(Settings.FIELD_LENGTH);
+    	  tanField.setName("TAN");
+    	  tanField.setText("A12345678"); // invalid: should start with T.    
+          Assert.assertTrue("TAN must start with T.".equals(homeView.validateTextField(tanField)));
+     
+    	  tanField.setText("T1234567"); // invalid: should contain 9 letters.    
+          Assert.assertTrue("TAN must contain 9 letters.".equals(homeView.validateTextField(tanField)));
+          
+          tanField.setText("T123456789"); // invalid: should contain 9 letters.  
+          Assert.assertTrue("TAN must contain 9 letters.".equals(homeView.validateTextField(tanField)));
+     
+          tanField.setText("T1234567a"); // invalid: should contain 8 digits.  
+          Assert.assertTrue("Please enter 8 digits after T or t for TAN.".equals(homeView.validateTextField(tanField)));
+     
+          tanField.setText("T12345678"); // invalid: should contain 8 digits.  
+          Assert.assertTrue("".equals(homeView.validateTextField(tanField)));
+     
+      }
       
     }
