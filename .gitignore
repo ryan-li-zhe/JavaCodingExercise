@@ -1,0 +1,6 @@
+# ignore all logs
+*.log
+# ignore .settings, target
+**/.settings/
+target/
+test-output/
