@@ -356,7 +356,7 @@ public class HomeView extends JFrame implements ActionListener, FocusListener {
                         if (returnable.length() > 0) {
                             returnable = returnable + "\nPlease enter a 8 digits after T or t for " + textFieldName + ".";
                         } else {
-                            returnable = "Please enter a 8 digits after T or t for " + textFieldName + ".";
+                            returnable = "Please enter 8 digits after T or t for " + textFieldName + ".";
                         }
                     }
                 }               
