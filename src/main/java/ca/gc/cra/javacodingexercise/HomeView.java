@@ -217,7 +217,7 @@ public class HomeView extends JFrame implements ActionListener, FocusListener {
         }
 
     }
-
+    
     /** Accepts a List<String[]>, then print it to console.
      * 
      * @param rows The rows that are retrieved from csv file.

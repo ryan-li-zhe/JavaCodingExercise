@@ -29,6 +29,10 @@ public class Settings {
     public static final String PI_FIELD_NAME = "PI";
     public static final String RI_FIELD_NAME = "RI";
     
+    public static final String DEFAULT_TAN = "T00000000";
+    public static final String DEFAULT_PROVINCE = "ON";
+    public static final int DEFAULT_PI = 0;
+    public static final int DEFAULT_RI = 0;
 
     public static final int FIELDS_COUNT = 6;   
 
