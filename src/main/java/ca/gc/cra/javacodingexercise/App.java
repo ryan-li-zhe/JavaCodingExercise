@@ -10,5 +10,7 @@ public class App {
         
         
         System.out.println("changes at remote branch");
+        
+        System.out.println();
     }
 }
